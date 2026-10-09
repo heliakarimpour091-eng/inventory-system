@@ -99,3 +99,21 @@ function addProduct(id, name, price, stock, category) {
 addProduct(6, "Headphones", 80, 10, "tech");
 
 console.log(products);
+
+function removeProduct(id) {
+    const productIndex = products.findIndex(function(product) {
+        return product.id === id;
+    });
+
+    if (productIndex === -1) {
+        console.log("Product not found");
+        return;
+    }
+
+    products.splice(productIndex, 1);
+    console.log("Product removed successfully");
+}
+
+removeProduct(2);
+
+console.log(products);
