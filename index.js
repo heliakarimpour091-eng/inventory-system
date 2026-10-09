@@ -52,3 +52,11 @@ function getAvailableProducts() {
 }
 
 console.log(getAvailableProducts());
+
+function getProductsByCategory(category) {
+    return products.filter(function(product) {
+        return product.category === category;
+    });
+}
+
+console.log(getProductsByCategory("tech"));
