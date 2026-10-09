@@ -44,3 +44,11 @@ function findProductById(id) {
 }
 
 console.log(findProductById(3));
+
+function getAvailableProducts() {
+    return products.filter(function(product) {
+        return product.stock > 0;
+    });
+}
+
+console.log(getAvailableProducts());
