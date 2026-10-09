@@ -83,3 +83,19 @@ function allProductsHaveValidPrices() {
 
 console.log(hasOutOfStockProduct());
 console.log(allProductsHaveValidPrices());
+
+function addProduct(id, name, price, stock, category) {
+    const newProduct = {
+        id: id,
+        name: name,
+        price: price,
+        stock: stock,
+        category: category
+    };
+
+    products.push(newProduct);
+}
+
+addProduct(6, "Headphones", 80, 10, "tech");
+
+console.log(products);
