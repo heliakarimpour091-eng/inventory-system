@@ -171,3 +171,22 @@ function purchaseProduct(id, quantity) {
 
 console.log(purchaseProduct(1, 2));
 console.log(products);
+
+function applyDiscount(category, percentage) {
+    if (percentage < 0 || percentage > 100) {
+        console.log("Invalid discount percentage");
+        return;
+    }
+
+    products.forEach(function(product) {
+        if (product.category === category) {
+            product.price = product.price * (1 - percentage / 100);
+        }
+    });
+
+    console.log("Discount applied successfully");
+}
+
+applyDiscount("tech", 10);
+
+console.log(products);
