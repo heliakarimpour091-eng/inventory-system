@@ -60,3 +60,11 @@ function getProductsByCategory(category) {
 }
 
 console.log(getProductsByCategory("tech"));
+
+function getTotalInventoryValue() {
+    return products.reduce(function(total, product) {
+        return total + (product.price * product.stock);
+    }, 0);
+}
+
+console.log(getTotalInventoryValue());
