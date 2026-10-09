@@ -117,3 +117,26 @@ function removeProduct(id) {
 removeProduct(2);
 
 console.log(products);
+
+function updateStock(id, newStock) {
+    if (newStock < 0) {
+        console.log("Stock cannot be negative");
+        return;
+    }
+
+    const product = products.find(function(product) {
+        return product.id === id;
+    });
+
+    if (!product) {
+        console.log("Product not found");
+        return;
+    }
+
+    product.stock = newStock;
+    console.log("Stock updated successfully");
+}
+
+updateStock(1, 15);
+
+console.log(products);
