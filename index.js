@@ -68,3 +68,18 @@ function getTotalInventoryValue() {
 }
 
 console.log(getTotalInventoryValue());
+
+function hasOutOfStockProduct() {
+    return products.some(function(product) {
+        return product.stock === 0;
+    });
+}
+
+function allProductsHaveValidPrices() {
+    return products.every(function(product) {
+        return product.price > 0;
+    });
+}
+
+console.log(hasOutOfStockProduct());
+console.log(allProductsHaveValidPrices());
