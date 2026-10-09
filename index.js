@@ -190,3 +190,26 @@ function applyDiscount(category, percentage) {
 applyDiscount("tech", 10);
 
 console.log(products);
+
+function getInventorySummary() {
+    const productCount = products.length;
+
+    const totalUnits = products.reduce(function(total, product) {
+        return total + product.stock;
+    }, 0);
+
+    const totalValue = products.reduce(function(total, product) {
+        return total + product.price * product.stock;
+    }, 0);
+
+    const outOfStockCount = products.filter(function(product) {
+        return product.stock === 0;
+    }).length;
+
+    console.log("Product count:", productCount);
+    console.log("Total units:", totalUnits);
+    console.log("Total inventory value:", totalValue);
+    console.log("Out of stock products:", outOfStockCount);
+}
+
+getInventorySummary();
