@@ -140,3 +140,34 @@ function updateStock(id, newStock) {
 updateStock(1, 15);
 
 console.log(products);
+
+function purchaseProduct(id, quantity) {
+    const product = products.find(function(product) {
+        return product.id === id;
+    });
+
+    if (!product) {
+        console.log("Product not found");
+        return;
+    }
+
+    if (quantity <= 0) {
+        console.log("Quantity must be greater than zero");
+        return;
+    }
+
+    if (product.stock < quantity) {
+        console.log("Not enough stock");
+        return;
+    }
+
+    product.stock -= quantity;
+
+    const totalPrice = product.price * quantity;
+
+    console.log("Purchase successful");
+    return totalPrice;
+}
+
+console.log(purchaseProduct(1, 2));
+console.log(products);
